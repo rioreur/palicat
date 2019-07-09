@@ -20,7 +20,7 @@ Once both mods are installed, you can :
 Once the mod is installed and active, a palicat pet should be added automaticly to your inventory.
 
 You can check if the mod is active in the game's option, in the "mod" tab (provided by CCLoader).
-If the mod is not selected , select it and restart your game. You can disable it by repeating the same steps.
+If the mod is not selected , select it and restart your game to activate it. You can disable it by repeating the same steps.
 
 If you have any problem, try updating your CCLoader mod and item-api mod.
 
