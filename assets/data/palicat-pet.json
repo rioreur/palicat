@@ -1,0 +1,18 @@
+{
+	"Palicat": {
+		"id": "Palicat",
+		"item": {"jsonINSTANCE": "customItem.palicat-pet"},
+		"autoAdd": true,
+		"type": "Pet",
+		"settings": {
+			"animSheet": "palicat",
+			"walkAnims": {
+				"idle": "idle",
+				"move": "move",
+				"run": "run",
+				"jump": "jump",
+				"fall": "fall"
+			}
+		}
+	}
+}
