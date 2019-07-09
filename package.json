@@ -2,9 +2,9 @@
 	"name": "Palicat",
 	"prestart": "prestart.js",
 	"description": "A mod that implement the palico from monster hunter world into the game",
-	"version": "0.0.1",
+	"version": "1.0.1",
 	"dependencies": {
-		"crosscode": ">= 1.1.0",
-		"item-api": "^0.*"
+		"crosscode": "^1.1.0",
+		"item-api": "^0.0.0"
 	}
 }

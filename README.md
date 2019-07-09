@@ -25,6 +25,10 @@ If the mod is not selected , select it and restart your game to activate it. You
 If you have any problem, try updating your CCLoader mod and item-api mod.
 
 ## Patch note
+### 1.0.1
+- The version of the mod was wrong, now corrected.
+- The version of the dependencies were... not ideal. Corrected.
+
 ### 1.0.0
 - New pet added to the game, the palicat !
 - The palicat behave slightly differently than usual pet in battle, check his seek moves !
