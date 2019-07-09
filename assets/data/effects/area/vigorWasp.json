@@ -1,0 +1,168 @@
+{
+    "DOCTYPE": "EFFECT",
+    "ANIMS": {
+        "SUB": [{
+            "name": "SPARK_1",
+            "sheet": {
+                "src": "media\/entity\/objects\/vigorWasp-destructibles.png",
+				"xCount": 2,
+                "offX": 0,
+                "offY": 32,
+                "width": 4,
+                "height": 4
+            },
+            "time": 0.2,
+            "repeat": true,
+            "frames": [0, 1]
+        }, {
+            "name": "SPARK_2",
+            "sheet": {
+                "src": "media\/entity\/objects\/vigorWasp-destructibles.png",
+				"xCount": 2,
+                "offX": 0,
+                "offY": 36,
+                "width": 4,
+                "height": 4
+            },
+            "time": 0.2,
+            "repeat": true,
+            "frames": [0, 1]
+        }, {
+            "name": "SPARK_3",
+            "sheet": {
+                "src": "media\/entity\/effects\/particles1.png",
+				"xCount": 3,
+                "offX": 0,
+                "offY": 16,
+                "width": 5,
+                "height": 5
+            },
+            "time": 0.2,
+            "repeat": true,
+            "frames": [0, 1, 2, 1]
+        }]
+    },
+    "EFFECTS": {
+        "burstVigorWasp": [{
+            "volume": 1,
+            "global": false,
+            "loop": false,
+            "variance": 0.1,
+            "sound": "media\/sound\/environment\/plant-hit.ogg",
+            "type": "PLAY_SOUND"
+        }, {
+            "volume": 1,
+            "global": false,
+            "loop": false,
+            "variance": 0.1,
+            "sound": "media\/sound\/battle\/blubb-2.ogg",
+            "type": "PLAY_SOUND"
+        }, {
+            "volume": 1.5,
+            "global": false,
+            "loop": false,
+            "variance": 0.1,
+            "sound": "media\/sound\/move\/heal.ogg",
+            "type": "PLAY_SOUND"
+        }, {
+            "numParticles": 7,
+            "duration": 0,
+            "centralAngle": 1,
+            "startDist": 7,
+            "uniformRandom": 1,
+            "particleRotate": true,
+            "minSpeed": 5,
+            "maxSpeed": 30,
+            "minZSpeed": 5,
+            "maxZSpeed": 10,
+            "zGravityFactor": 0.03,
+            "zBounciness": 0,
+            "collision": true,
+            "pAlpha": {
+                "init": 0.8,
+                "end": {
+                    "value": 0,
+                    "time": 0.5
+                }
+            },
+            "particleDuration": 0.8,
+            "anim": "SPARK_1",
+            "type": "DEBRIS_CIRCLE"
+        }, {
+            "numParticles": 5,
+            "duration": 0,
+            "centralAngle": 1,
+            "startDist": 3,
+            "uniformRandom": 1,
+            "particleRotate": true,
+            "minSpeed": 5,
+            "maxSpeed": 30,
+            "minZSpeed": 5,
+            "maxZSpeed": 10,
+            "zGravityFactor": 0.03,
+            "zBounciness": 0,
+            "collision": true,
+            "pAlpha": {
+                "init": 0.8,
+                "end": {
+                    "value": 0,
+                    "time": 0.5
+                }
+            },
+            "particleDuration": 0.8,
+            "anim": "SPARK_2",
+            "type": "DEBRIS_CIRCLE"
+        }, {
+			"time": 0.2,
+            "type": "WAIT"
+		}, {
+            "numParticles": 10,
+            "duration": 0,
+            "centralAngle": 1,
+            "startDist": 7,
+            "uniformRandom": 1,
+            "particleRotate": true,
+            "minSpeed": 5,
+            "maxSpeed": 10,
+            "minZSpeed": 2,
+            "maxZSpeed": 5,
+            "zGravityFactor": 0.03,
+            "zBounciness": 0,
+            "collision": true,
+            "pAlpha": {
+                "init": 0.8,
+                "end": {
+                    "value": 0,
+                    "time": 0.5
+                }
+            },
+            "particleDuration": 0.8,
+            "anim": "SPARK_2",
+            "type": "DEBRIS_CIRCLE"
+        }, {
+            "numParticles": 5,
+            "duration": 0,
+            "centralAngle": 1,
+            "startDist": 3,
+            "uniformRandom": 1,
+            "particleRotate": true,
+            "minSpeed": 2,
+            "maxSpeed": 10,
+            "minZSpeed": 2,
+            "maxZSpeed": 5,
+            "zGravityFactor": 0.03,
+            "zBounciness": 0,
+            "collision": true,
+            "pAlpha": {
+                "init": 0.8,
+                "end": {
+                    "value": 0,
+                    "time": 0.5
+                }
+            },
+            "particleDuration": 0.8,
+            "anim": "SPARK_1",
+            "type": "DEBRIS_CIRCLE"
+        }]
+    }
+}
