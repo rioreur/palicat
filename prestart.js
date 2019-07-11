@@ -6,20 +6,33 @@
 
 // Used so the palicatEntity is loaded insted of the normal sc.PlayerPetEntity
 ig.ENTITY.Player.inject({
+	// this attribute is used to store the palicat, so its properties are conserved
+	palicatEntity: null,
 	// We change the way the pet entity is spawn
 	updateSkinPet: function(a) {
-		this.parent(a);
-		// If the pet is a palicat, we spawn the palicatEntity
+		// Remove the previous skin
+		if (this.skin.pet) {
+			this.skin.pet.remove();
+			this.skin.pet = null;
+		}
+		
 		var currentSkin = sc.playerSkins.getCurrentSkin("Pet");
-		if (currentSkin && currentSkin.name == "Palicat") {
-			if (this.skin.pet) {
-				this.skin.pet.remove();
-				this.skin.pet = null
+		if (currentSkin && currentSkin.loaded) {
+			if (currentSkin.name == "Palicat") {
+				if (!this.palicatEntity) {
+					this.palicatEntity = ig.game.spawnEntity(palicatEntity, 0, 0, 0, {
+						petSkin: currentSkin
+						}, a || false);
+				}
+				this.skin.pet = this.palicatEntity;
+				this.skin.pet.show();
+			} else {
+				this.skin.pet = ig.game.spawnEntity(sc.PlayerPetEntity, 0, 0, 0, {
+					petSkin: currentSkin
+					}, a || false)
 			}
-			if (currentSkin.loaded) this.skin.pet = ig.game.spawnEntity(palicatEntity, 0, 0, 0, {
-				petSkin: currentSkin
-			}, a || false)
-		}	
+			
+		}
 	}
 });
 
@@ -112,45 +125,56 @@ palicatEntity = sc.ActorEntity.extend({
 		}
 	},
 	remove: function() {
-		this.kill()
+		this.hide();
 	},
 	// We change the update function to add some combat behavior and delete/change others
 	update: function() {
+		// store to the possible targets
 		var playerEntity = ig.game.playerEntity;
-		var playerTarget = ig.game.playerEntity.combatStats.lastTarget;
+		var playerTargetEntity = ig.game.playerEntity.combatStats.lastTarget;
 		
 		
 		// If the pet is not doing any action
 		if (!this.currentAction) {
-			var distFromPlayerTarget = 0,
-				distFromPlayer = ig.CollTools.getGroundDistance(this.coll, playerEntity.coll),
-				distFromTarget = 0,
-				currentState = this.state;
+			var currentState = this.state,
+				distFromTarget = 0; // use to store the distance from the selected target
+			
+			// Calculate the distance from the different possible targets
+			var distFromPlayerEntity = ig.CollTools.getGroundDistance(this.coll, playerEntity.coll),
+				distFromPlayerTarget = 0;
+			if (playerTargetEntity)
+				distFromPlayerTarget = ig.CollTools.getGroundDistance(this.coll, playerTargetEntity.coll);
 				
-			if (playerTarget)
-				distFromPlayerTarget = ig.CollTools.getGroundDistance(this.coll, playerTarget.coll);
 				
-				
-			// Change the target according to different factors
-			if (sc.model.isCombatActive() && ig.game.playerEntity.combatStats.lastTarget) {
-				// The target is the player if he's too close or if their is no target yet
-				if (distFromPlayer < 30 || !playerTarget) {
+			// Change the target of the palicat
+			// In battle
+			if (sc.model.isCombatActive() && playerTargetEntity) {
+				// The target is the player only if he's really too close or too far
+				if (distFromPlayerEntity < 30 || distFromPlayerEntity > 200) {
 					this.target = playerEntity;
-					distFromTarget = distFromPlayer;
-				} else {
-					this.target = playerTarget;
+					distFromTarget = distFromPlayerEntity;
+				}
+				// Default target is the player targeted enemy
+				else {
+					this.target = playerTargetEntity;
 					distFromTarget = distFromPlayerTarget;
 				}
-			} else {
+			} 
+			// Out of battle
+			else {
+				// Always the player
 				this.target = playerEntity;
-				distFromTarget = distFromPlayer;
+				distFromTarget = distFromPlayerEntity;
 			}
-				
-			// Update state if we're in combat and the pet too far or too close from the player ("stay in range" state)
-			if (sc.model.isCombatActive() && (distFromTarget <= 60 || distFromTarget >= 200)) currentState = 2;
 			
-			// Update state if we're not in combat and the pet too far from the player ("follow closely" state)
-			!sc.model.isCombatActive() && distFromTarget >= 24 && (currentState = 1);
+			// Update state according to the distance frome the target, unlock the target if the conditions are met
+			if (sc.model.isCombatActive()) {
+				if (distFromTarget <= 60 || distFromTarget >= 200) currentState = 2
+			}
+			else {
+				distFromTarget >= 24 && (currentState = 1);
+			}
+			
 			
 			// Hide the pet if he needs to be hidden
 			var hidePet = playerEntity._hidden || playerEntity.hidePets;

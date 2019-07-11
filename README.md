@@ -25,6 +25,11 @@ If the mod is not selected , select it and restart your game to activate it. You
 If you have any problem, try updating your CCLoader mod and item-api mod.
 
 ## Patch note
+
+### 1.0.2
+- Fixed an exploit that allowed the palicat to spawn more than two vigor wasp, *you cheater* !
+- Improve the AI of the palicat a bit, it now tends to better follow the player.
+
 ### 1.0.1
 - The version of the mod was wrong, now corrected.
 - The version of the dependencies were... not ideal. Corrected.
