@@ -27,7 +27,7 @@ If you have any problem, try updating your CCLoader mod and item-api mod.
 ## Patch note
 
 ### 1.0.2
-- Fixed an exploit that allowed the palicat to spawn more than two vigor wasp, *you cheater* !
+- Fixed an exploit that allowed the palicat to spawn more than two vigor wasp, **you cheater** !
 - Improve the AI of the palicat a bit, it now tends to better follow the player.
 
 ### 1.0.1
