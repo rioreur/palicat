@@ -9,11 +9,11 @@ the CCLoader mod
 
 the item-api mod  
 	download link : https://gitlab.com/20kdc/ccprestartapi/tree/master
-	
+
 Once both mods are installed, you can : 
 1. Download the repository by left clicking on the Clone or download and left click on Download Zip.
 2. Unzip the zip file.
-3. Copy the contents of the folder into your CrossCode "assets\mods" folder (provided by CCLoader in the crosscode directory  
+3. Copy the "palicat-master" folder into your CrossCode "assets\mods" folder (provided by CCLoader in the crosscode directory  
 	(the path should be something like this : "D:\Steam\steamapps\common\CrossCode\assets\mods")
 
 ## How does it work ?
