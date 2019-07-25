@@ -4,7 +4,7 @@
         "SUB": [{
             "name": "SPARK_1",
             "sheet": {
-                "src": "media\/entity\/objects\/vigorWasp-destructibles.png",
+                "src": "media/entity/objects/vigorWasp-destructibles.png",
 				"xCount": 2,
                 "offX": 0,
                 "offY": 32,
@@ -17,7 +17,7 @@
         }, {
             "name": "SPARK_2",
             "sheet": {
-                "src": "media\/entity\/objects\/vigorWasp-destructibles.png",
+                "src": "media/entity/objects/vigorWasp-destructibles.png",
 				"xCount": 2,
                 "offX": 0,
                 "offY": 36,
@@ -30,7 +30,7 @@
         }, {
             "name": "SPARK_3",
             "sheet": {
-                "src": "media\/entity\/effects\/particles1.png",
+                "src": "media/entity/effects/particles1.png",
 				"xCount": 3,
                 "offX": 0,
                 "offY": 16,
@@ -48,21 +48,21 @@
             "global": false,
             "loop": false,
             "variance": 0.1,
-            "sound": "media\/sound\/environment\/plant-hit.ogg",
+            "sound": "media/sound/environment/plant-hit.ogg",
             "type": "PLAY_SOUND"
         }, {
             "volume": 1,
             "global": false,
             "loop": false,
             "variance": 0.1,
-            "sound": "media\/sound\/battle\/blubb-2.ogg",
+            "sound": "media/sound/battle/blubb-2.ogg",
             "type": "PLAY_SOUND"
         }, {
             "volume": 1.5,
             "global": false,
             "loop": false,
             "variance": 0.1,
-            "sound": "media\/sound\/move\/heal.ogg",
+            "sound": "media/sound/move/heal.ogg",
             "type": "PLAY_SOUND"
         }, {
             "numParticles": 7,

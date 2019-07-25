@@ -27,6 +27,9 @@ If you have any problem, try updating your CCLoader mod and item-api mod.
 
 ## Patch note
 
+### 1.0.3
+- Fixed a **BIG** problem that made the mod... doesn't work *(the mod folder was suppose to be "palicat" and not "palicat-master", everyone of them is find now)*
+
 ### 1.0.2
 - Fixed an exploit that allowed the palicat to spawn more than two vigor wasp, **you cheater** !
 - Improve the AI of the palicat a bit, it now tends to better follow the player.
