@@ -1,9 +1,10 @@
 {
 	"name": "Palicat",
 	"prestart": "prestart.js",
-	"description": "A mod that implement the palico from monster hunter world into the game",
-	"version": "1.0.2",
-	"dependencies": {
+	"homepage": "https://github.com/rioreur/palicat",
+	"description": "A mod that implement the palico from monster hunter world into the game.",
+	"version": "1.0.4",
+	"ccmodDependencies": {
 		"crosscode": "^1.1.0",
 		"item-api": "^0.*"
 	}
