@@ -11,7 +11,7 @@ the CCLoader mod
 the item-api mod  
 	download link : https://github.com/CCDirectLink/item-api
 
-the templating-api mod (item-api needs it to work)
+the templating-api mod (item-api needs it to work)  
 	download link : https://github.com/CCDirectLink/templating-api
 
 Once all mods are installed, you can : 
