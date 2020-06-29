@@ -2,7 +2,7 @@
 ## Description
 A mod for Crosscode adding a palicat pet, inspired by the palicos from Monster Hunter
 
-## InstalLation
+## Installation
 First and formost, **be sure to have a backup on any save files that is important to you BEFORE testing the mod**, a wrong installation could corrupt your save file.
 For this mod to work you will need to install:  
 the CCLoader mod  
