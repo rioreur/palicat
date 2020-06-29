@@ -10,11 +10,11 @@ the CCLoader mod
 
 the item-api mod  
 	download link : https://github.com/CCDirectLink/item-api
-	
+
 the templating-api mod (item-api needs it to work)
 	download link : https://github.com/CCDirectLink/templating-api
 
-Once both mods are installed, you can : 
+Once all mods are installed, you can : 
 1. Download the repository by left clicking on the Clone or download and left click on Download Zip.
 2. Unzip the zip file.
 3. Copy the "palicat-master" folder into your CrossCode "assets\mods" folder (provided by CCLoader in the crosscode directory  
