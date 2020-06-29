@@ -10,7 +10,7 @@
             "height": 32
         },
         "special": {
-            "src": "/media/entity/pets/pet-palicat.png",
+            "src": "media/entity/pets/pet-palicat.png",
             "xCount": 4,
             "offX": 288,
             "offY": 64,
@@ -18,7 +18,7 @@
             "height": 32
         },
         "action": {
-            "src": "/media/entity/pets/pet-palicat.png",
+            "src": "media/entity/pets/pet-palicat.png",
             "xCount": 7,
             "offX": 288,
             "offY": 16,

@@ -9,7 +9,10 @@ the CCLoader mod
 	download link : https://github.com/CCDirectLink/CCLoader
 
 the item-api mod  
-	download link : https://gitlab.com/20kdc/ccprestartapi/tree/master
+	download link : https://github.com/CCDirectLink/item-api
+	
+the templating-api mod (item-api needs it to work)
+	download link : https://github.com/CCDirectLink/templating-api
 
 Once both mods are installed, you can : 
 1. Download the repository by left clicking on the Clone or download and left click on Download Zip.
@@ -27,8 +30,14 @@ If you have any problem, try updating your CCLoader mod and item-api mod.
 
 ## Patch note
 
+### 1.0.5
+- Corrections so the mod is up to date with the latest version of CCLoader and item-api.
+
+### 1.0.4
+- Some updates so the mod is compatible with CCModDB
+
 ### 1.0.3
-- Fixed a **BIG** problem that made the mod... doesn't work *(the mod folder was suppose to be "palicat" and not "palicat-master", everyone of them is find now)*
+- Fixed a **BIG** problem that made the mod... doesn't work *(the mod folder was suppose to be "palicat" and not "palicat-master", both of them are fine now)*
 
 ### 1.0.2
 - Fixed an exploit that allowed the palicat to spawn more than two vigor wasp, **you cheater** !

@@ -37,9 +37,6 @@ ig.ENTITY.Player.inject({
 });
 
 // This is the entity that is use for the AI of the palicat
-// (problem possible with ig.QuickSand)
-// note : 	the "currentAction" attribute seems to only refer to the player petting the entity for now.
-//			Could be a good idea to use this to make the palicat place a vigorWasp
 var b = new ig.ActorConfig({
 		jumpingEnabled: true,
 		maxVel: 180,
@@ -51,6 +48,7 @@ var b = new ig.ActorConfig({
 	}),
 	buffVect2 = Vec2.create(),
 	buffVect3 = Vec3.create();
+	
 // This class is mostly a copy of the sc.playerPetEntity class
 palicatEntity = sc.ActorEntity.extend({
 	// New attributes created for the palicat
@@ -127,9 +125,10 @@ palicatEntity = sc.ActorEntity.extend({
 	remove: function() {
 		this.hide();
 	},
+	
 	// We change the update function to add some combat behavior and delete/change others
 	update: function() {
-		// store to the possible targets
+		// store the possible targets
 		var playerEntity = ig.game.playerEntity;
 		var playerTargetEntity = ig.game.playerEntity.combatStats.lastTarget;
 		
@@ -169,10 +168,10 @@ palicatEntity = sc.ActorEntity.extend({
 			
 			// Update state according to the distance frome the target, unlock the target if the conditions are met
 			if (sc.model.isCombatActive()) {
-				if (distFromTarget <= 60 || distFromTarget >= 200) currentState = 2
+				if (distFromTarget <= 60 || distFromTarget >= 200) currentState = 2 // "stay in range" state
 			}
 			else {
-				distFromTarget >= 24 && (currentState = 1);
+				distFromTarget >= 24 && (currentState = 1); // "follow closely" state
 			}
 			
 			
@@ -224,7 +223,7 @@ palicatEntity = sc.ActorEntity.extend({
 				this.coll.relativeVel = velocity;
 				this.nav.path.startRelativeVel = velocity;
 				
-				// Check if the pet arrived at destination
+				// Check if the pet arrived at destination and reset his state
 				if (this.state === 1 || this.state === 2) {
 					if (this.nav.path.moveEntity()) {
 						this.state = 0;
@@ -258,7 +257,7 @@ palicatEntity = sc.ActorEntity.extend({
 				}
 			} else this.resetIdleTimer();
 		
-		// If the pet is not hidden and if he is not doing any action
+		// If the pet is not hidden and if it is not doing any action
 		if (!this.tempHidden && !this.currentAction) {
 			// Check for collision and move the pet accordingly
 			petColl = this.coll;
