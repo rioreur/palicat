@@ -1,0 +1,14 @@
+{
+	"id": "Palicat",
+	"version": "1.0.5",
+	"title": "Palicat",
+	"description": "A mod that implement the palico from monster hunter world into the game.",
+	"repository": "https://github.com/rioreur/palicat",
+    "tags": ["cosmetic"],
+    "authors": "rioreur",
+	"dependencies": {
+		"crosscode": "^1.1.0",
+		"item-api": "^0.*"
+	},
+	"prestart": "prestart.js"
+}
