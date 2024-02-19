@@ -30,6 +30,9 @@ If you have any problem, try updating your CCLoader mod and item-api mod.
 
 ## Patch note
 
+### 1.0.6
+- Update to comply with the new mod database standard
+
 ### 1.0.5
 - Corrections so the mod is up to date with the latest version of CCLoader and item-api.
 
