@@ -4,6 +4,9 @@
 // Palicat
 /////////////////
 
+let hasArrived, velocity, distPlayer, petColl, isColliding, overlapingEntities
+let indexEntity, terrainColl, idIdleSpecial, d, palicatEntity, VigorWasp
+
 // Used so the palicatEntity is loaded insted of the normal sc.PlayerPetEntity
 ig.ENTITY.Player.inject({
 	// this attribute is used to store the palicat, so its properties are conserved
@@ -389,7 +392,7 @@ sc.ITEM_DESTRUCT_TYPE["vigorWasp"] = {
 	anims: {
 		shapeType: "Y_FLAT",
 		sheet: {
-			src: "mods/palicat/assets/media/entity/objects/vigorWasp-destructibles.png",
+			src: "media/entity/objects/vigorWasp-destructibles.png",
 			width: 24,
 			height: 32,
 			offY: 0,
