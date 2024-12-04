@@ -30,6 +30,9 @@ If you have any problem, try updating your CCLoader mod and item-api mod.
 
 ## Patch note
 
+### 1.0.7
+- Fix a crash when activating the pet
+
 ### 1.0.6
 - Update to comply with the new mod database standard
 
